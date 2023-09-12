@@ -1,0 +1,79 @@
+vehicle_number= 0
+def user_choosing_options():
+    user_choice = int(input("What do you want to do?"))#taking input from the user for option
+
+    if user_choice == 1:
+        park_vehicle()#calling fuction for parking vehicle
+
+    elif user_choice == 2:
+        remove_vehicle()#calling function to remove vhicle
+
+    elif user_choice == 3:
+        view_vehicle()#calling function to view the vehicle
+
+    elif user_choice == 4:
+        exit_program()#calling function to exit from the options
+
+    else:
+        print("Choose the correct option")
+
+def options():
+    print("1. Park a vehicle")
+    print("2. Remove a vehicle")
+    print("3. View parked vehicles")
+    print("4. Exit")
+    user_choosing_options()
+
+
+def decrement(a):
+    a-=1
+    return a
+
+def increment(a):
+    a+=1
+    return a 
+
+def park_vehicle():
+    vehicle_number = int(input("Enter the registration number: "))
+    print("Vehicle parked successfully.")
+    print("Available slots are:", decrement(a))
+    options()
+    
+
+def remove_vehicle():
+    global vehicles_parked  # Access the global variable
+    vehicle_number = int(input("Enter the registration number: "))
+    if no_plate == vehicle_number:
+        vehicles_parked += 1  # Decrement the count of parked vehicles
+        print("Your vehicle removed successfully")
+        print("Available slots are:", increment(a))
+        options()
+    else:
+        print("There is no vehicle with this registration number")
+        options()
+
+def view_vehicle():
+    global vehicles_parked  # Access the global variable
+    if vehicles_parked > 0:
+        print("Register Number of the vehicle parked:", )# Code to display parked vehicles
+        options()
+    else:
+        print("No vehicles are parked")
+
+def exit_program():
+    print("You have exited")
+def main():
+    try:
+        global a 
+        a = int(input("Enter the number of slots: "))
+        if a == 0:
+            print("No slots are available! Thank you for choosing.....!")
+        else:
+            options() 
+    except ValueError:
+        print("The given value should be in Integer")
+        main()
+main()
+
+
+    
